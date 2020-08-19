@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="eel.js"></script>
+    <meta charset="UTF-8">
+    <title>Погода</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<div class="form_group">
+    <div class="text3d-wrap-2">
+    <div class="text3d-2">
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+        <div class="text3d-layer-2"></div>
+    </div>
+</div>
+    <div class="form_group">
+        <input style="color:#f8f1c5" id="location" type="text" class="type-1" placeholder="Введите город и страну" required="" value="Москва">
+
+        <div id="info" class="out" style="color:#f8f1c5"></div>
+        <a id="show">Узнать погоду</a>
+    </div>
+
+</div>
+
+    <script>
+       async function  display_weather() {
+           let place = document.getElementById('location').value;
+
+           let res = await eel.get_weather(place)();
+            return document.getElementById('info').innerHTML  = res;
+       }
+
+       jQuery('#show').on('click', function () {
+           display_weather();
+       });
+
+    </script>
+
+</body>
+</html>
