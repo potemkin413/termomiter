@@ -1,2 +1,2 @@
 # termomiter
- wev-app on python with HTML/CSS3
+ web-app on python with HTML/CSS3
